@@ -11,11 +11,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & cache dependencies
         id: cached-dep
-        uses: ./.github/actions/cached-dep/action.yml
+        uses: ./.github/actions/cached-dep
         with:
           caching: 'false'
       - name: Output cache information
-        run: echo "Cache used? ${{ cache-dep.outputs.used-cache }}"
+        run: echo "Cache used? ${{ steps.cache-dep.outputs.used-cache }}"
       - name: Lint code
         run: npm run lint
   test:
@@ -25,11 +25,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & cache dependencies
         id: cached-dep2
-        uses: ./.github/actions/cached-dep/action.yml
+        uses: ./.github/actions/cached-dep
         with:
           caching: 'true'
       - name: Output cache information
-        run: echo "Cache used? ${{ cache-dep2.outputs.used-cache }}"
+        run: echo "Cache used? ${{ steps.cache-dep2.outputs.used-cache }}"
       - name: Test code
         id: run-tests
         run: npm run test
@@ -47,11 +47,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & cache dependencies
         id: cached-dep3
-        uses: ./.github/actions/cached-dep/action.yml
+        uses: ./.github/actions/cached-dep
         with:
           caching: 'true'
       - name: Output cache information
-        run: echo "Cache used? ${{ cache-dep3.outputs.used-cache }}"
+        run: echo "Cache used? ${{ steps.cache-dep3.outputs.used-cache }}"
       - name: Build website
         run: npm run build
       - name: Upload artifacts
