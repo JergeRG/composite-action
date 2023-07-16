@@ -9,11 +9,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Check files
-        run: cat ./.github/actions/cached-dep/action.yml
       - name: Load & cache dependencies
         id: cache-dep
-        uses: ./.github/actions/cached-dep
+        uses: ./.github/actions/cached-deps
         with:
           caching: 'false'
       - name: Output cache information
@@ -27,7 +25,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & cache dependencies
         id: cache-dep2
-        uses: ./.github/actions/cached-dep
+        uses: ./.github/actions/cached-deps
         with:
           caching: 'true'
       - name: Output cache information
@@ -49,7 +47,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & cache dependencies
         id: cache-dep3
-        uses: ./.github/actions/cached-dep
+        uses: ./.github/actions/cached-deps
         with:
           caching: 'true'
       - name: Output cache information
