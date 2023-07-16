@@ -10,7 +10,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Check files
-        run: echo "cat ./.github/actions/cached-dep/action.yml"
+        run: cat ./.github/actions/cached-dep/action.yml
       - name: Load & cache dependencies
         id: cache-dep
         uses: ./.github/actions/cached-dep
