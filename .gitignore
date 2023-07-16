@@ -11,6 +11,8 @@ lerna-debug.log*
 /dist
 dist-ssr
 *.local
+@octokit
+
 
 # Editor directories and files
 .vscode/*
