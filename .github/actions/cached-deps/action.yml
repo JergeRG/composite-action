@@ -1,6 +1,6 @@
- name: 'Get & Cached Dependencies'
- description: 'Get dependencies (via npm) and cache them.'
- inputs:
+name: 'Get & Cached Dependencies'
+description: 'Get dependencies (via npm) and cache them.'
+inputs:
     caching:
         description: 'Wheter to cache dependencies or not.'
         required: false
